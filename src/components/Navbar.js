@@ -11,22 +11,22 @@ class Navbar extends Component {
             <div className="container-navbar">
                 
                 <NavWrapper>
-                    <div class="py-1 first-nav">
-                        <div class="container">
-                            <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
-                                <div class="col-lg-12 d-block">
-                                    <div class="row d-flex">
-                                        <div class="col-md pr-4 d-flex topper align-items-center text-sm-right">
-                                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                                            <i class="fas fa-mobile-alt mr-1"></i>
-                                            <span class="text">+ 212 610 70 60 05</span>
+                    <div className="py-1 first-nav">
+                        <div className="container">
+                            <div className="row no-gutters d-flex align-items-start align-items-center px-md-0">
+                                <div className="col-lg-12 d-block">
+                                    <div className="row d-flex">
+                                        <div className="col-md pr-4 d-flex topper align-items-center text-sm-right">
+                                            <div className="icon mr-2 d-flex justify-content-center align-items-center"><span className="icon-phone2"></span></div>
+                                            <i className="fas fa-mobile-alt mr-1"></i>
+                                            <span className="text">+ 212 610 70 60 05</span>
                                         </div>
-                                        <div class="col-md pr-4 d-flex topper align-items-center text-sm-right">
-                                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
-                                            <i class="fas fa-paper-plane mr-2"></i>
-                                            <span class="text">elkhayari@monsouq.com</span>
+                                        <div className="col-md pr-4 d-flex topper align-items-center text-sm-right">
+                                            <div className="icon mr-2 d-flex justify-content-center align-items-center"><span className="icon-paper-plane"></span></div>
+                                            <i className="fas fa-paper-plane mr-2"></i>
+                                            <span className="text">elkhayari@monsouq.com</span>
                                         </div>
-                                        <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+                                        <div className="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
                                             <Link to='/cart' className='ml-auto'>
                                                 <ButtonContainer className="mr-2" cart_navbar>
                                                     <span>
@@ -37,7 +37,7 @@ class Navbar extends Component {
                                             </Link>
                                             <Link to='/account'>
                                                 <ButtonContainer className="mr-1" cart_navbar>
-                                                <i class="fas fa-user"></i>
+                                                <i className="fas fa-user"></i>
                                                 </ButtonContainer>
                                             </Link>
                                         </div>
@@ -50,25 +50,25 @@ class Navbar extends Component {
                     </NavWrapper>
 
                     <NavWrapper>
-                    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-                        <div class="container">
-                            <div class="logo-container navbar-brand">
+                    <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+                        <div className="container">
+                            <div className="logo-container navbar-brand">
                                 <Link to='/' >
                                     <img src={logo} alt='store-logo' className='navbar-brand' />
                                 </Link>
                             </div>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	                             <span class="navbar-toggler-icon"></span> Menu
+                            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	                             <span className="navbar-toggler-icon"></span> Menu
 	                        </button>
 
-                            <div class="collapse navbar-collapse" id="navbarResponsive">
-                                <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                                    <li class="nav-item"><a href="about.html" class="nav-link">Vegetables</a></li>
-                                    <li class="nav-item"><a href="blog.html" class="nav-link">Fruitst</a></li>
-                                    <li class="nav-item"><a href="contact.html" class="nav-link">Meat & Seafood</a></li>
-                                    <li class="nav-item"><a href="contact.html" class="nav-link">Backery</a></li>
-                                    <li class="nav-item"><a href="contact.html" class="nav-link">Beauty</a></li>
+                            <div className="collapse navbar-collapse" id="navbarResponsive">
+                                <ul className="navbar-nav mr-auto">
+                                <li className="nav-item active"><a href="index.html" className="nav-link">Home</a></li>
+                                    <li className="nav-item"><a href="about.html" className="nav-link">Vegetables</a></li>
+                                    <li className="nav-item"><a href="blog.html" className="nav-link">Fruitst</a></li>
+                                    <li className="nav-item"><a href="contact.html" className="nav-link">Meat & Seafood</a></li>
+                                    <li className="nav-item"><a href="contact.html" className="nav-link">Backery</a></li>
+                                    <li className="nav-item"><a href="contact.html" className="nav-link">Beauty</a></li>
                                     
                                 </ul>
 
@@ -122,12 +122,6 @@ const NavWrapper = styled.nav`
 
 
 @media (max-width: 992px) {
-
-    .navbar-toggler{
-        color:red !important; 
-        margin-left:30rem !important;
-    }
-   
     .logo-container{
         position: absolute;
         z-index:-99 !important;

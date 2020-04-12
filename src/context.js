@@ -83,30 +83,42 @@ class ProductProvider extends Component {
     }
        
     increment = (id) =>{
-        let tempCart = [...this.state.cart]
-        const selectedProduct = tempCart.find(item => item.id === id)
+        console.log('inc')
+        let tempList = [...this.state.products]
+        const selectedProduct = tempList.find(item => item.id === id)
 
-        const index = tempCart.indexOf(selectedProduct);
-        const product = tempCart[index];
+        const index = tempList.indexOf(selectedProduct);
+        const product = tempList[index];
 
-        product.count = product.count+ 1;
+        product.count = product.count + 1;
         product.total = product.count * product.price;
 
-        this.setState(() =>{
-            return{
-                cart : [...tempCart]
-            }
-        },() => {
-            this.addTotals();
-        })
+        
+            this.setState(() =>{
+                if((!this.state.cart.includes(product))){
+                    return{
+                        cart : [...this.state.cart, selectedProduct]
+                    }
+                }
+                else{
+                    return null
+                }
+                
+            },() => {
+               
+                this.addTotals();
+            })
+        
+        
     }
 
     decrement = (id) => {
-        let tempCart = [...this.state.cart]
-        const selectedProduct = tempCart.find(item => item.id === id)
+        let tempCart =[...this.state.cart];
+        let tempList = [...this.state.products]
+        const selectedProduct = tempList.find(item => item.id === id)
 
-        const index = tempCart.indexOf(selectedProduct);
-        const product = tempCart[index];
+        const index = tempList.indexOf(selectedProduct);
+        const product = tempList[index];
 
         product.count = product.count - 1;
         if( product.count === 0){

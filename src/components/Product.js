@@ -50,6 +50,7 @@ class Product extends Component {
               
 
             </ProductWrapper>
+            
         );
     }
 }

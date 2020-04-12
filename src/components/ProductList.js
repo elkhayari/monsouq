@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from './Product'
+import ProductItem from './ProductItem'
 import Title from './Title'
 
 import {ProductConsumer} from '../context'
@@ -17,7 +18,7 @@ class ProductList extends Component {
                               <ProductConsumer>
                                   {value =>{
                                     return value.products.map( product =>{
-                                        return <Product key={product.id} product={product}  />
+                                        return <ProductItem key={product.id} product={product} value={value} />
                                     })
                                   }}
                               </ProductConsumer>

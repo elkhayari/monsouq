@@ -18,7 +18,10 @@ export default function CartItem({ product, value }) {
              <div className='button-container'>
                 <div className="btn-toolbar " role="toolbar" aria-label="Toolbar with button groups">
                    <div className="btn-group  btn-group-sm" role="group" aria-label="First group">
-                     <button type="button" className="btn btn-secondary mx-2"  onClick={() => decrement(id)}> 
+                       {/*TO DO disabled={inCart ? true : false} for decrement */}
+                     <button type="button" 
+                             
+                             className="btn btn-secondary mx-2"  onClick={() => decrement(id)}> 
                             <i className="fas fa-minus-circle"></i>
                      </button>
                      <div className='count'>

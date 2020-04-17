@@ -9,6 +9,8 @@ import Details from './components/Details'
 import Cart from './components/Cart'
 import Default from './components/Default'
 import Modal from './components/Modal'
+import LoginModal from './components/Login/LoginModal'
+import SignUpModal from './components/Login/SignUpModal'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -23,6 +25,8 @@ class App extends Component {
           <Route exact path='/' component={ProductList} />
           <Route path='/details' component={Details} />
           <Route path='/cart' component={Cart} />
+          <Route path='/login' component={LoginModal} />
+          <Route path='/signup' component={SignUpModal} />
     
           <Route  component={Default} />
         </Switch>

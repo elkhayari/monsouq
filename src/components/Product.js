@@ -8,7 +8,7 @@ import { ProductConsumer } from '../context'
 class Product extends Component {
     
     render() { 
-        const {id, title, img, price, inCart} = this.props.product;
+        const {_id, title, img, price, inCart} = this.props.product;
 
         return (  
             <ProductWrapper className='col-9 mx-auto col-md-6 col-lg-3 my-3'>
@@ -17,7 +17,7 @@ class Product extends Component {
                         { (value) => (
                             <div className='img-container p-5' 
                                   onClick={()=> 
-                                     value.handelDetail(id)
+                                     value.handelDetail(_id)
                                   }>
                             <Link  to='/details' >
                                 <img src={img} alt='product' className='card-img-top'/>
@@ -25,8 +25,8 @@ class Product extends Component {
                             <button className='cart-btn' 
                                     disabled={inCart ? true : false} 
                                     onClick={ () => {
-                                            value.addToCart(id);
-                                            value.openModal(id);
+                                            value.addToCart(_id);
+                                            value.openModal(_id);
                                             }}
                             >
                                 {inCart ? (<p className='text-capitalize mb-0' disabled> {" "} in cart</p>) : (<i className='fas fa-cart-plus' />)}
@@ -57,7 +57,7 @@ class Product extends Component {
 
 Product.propTypes = {
     product: PropTypes.shape({
-        id: PropTypes.number,
+        _id: PropTypes.string,
         img: PropTypes.string,
         title: PropTypes.string,
         price: PropTypes.number,

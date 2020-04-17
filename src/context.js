@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {storeProducts, detailProduct} from './data'
+import {storeProducts, detailProduct} from './data';
+import axios from 'axios'
 
 
 const ProductContext = React.createContext();
@@ -16,7 +17,9 @@ class ProductProvider extends Component {
         modalProduct: detailProduct,
         cartSubtotal: 0,
         cartTax: 0,
-        cartTotal: 0
+        cartTotal: 0,
+        modalOpenLogin: false,
+        modalOpenSignUp: false
     }
 
     componentDidMount(){
@@ -25,6 +28,18 @@ class ProductProvider extends Component {
     // fetch product from data.js file
     setProducts = () => {
         let temProducts = [];
+        console.log('url', process.env.REACT_APP_BACKEND)
+        axios.get(process.env.REACT_APP_BACKEND)
+             .then(response => {
+                 this.setState(() => {
+                     
+                     return { products: [...response.data]}
+                 })
+             })
+             .catch(error =>{
+                 console.log('fetch data error: ', error)
+             })
+        /*
         storeProducts.forEach(item => {
             const singleItem = {...item};
             temProducts = [...temProducts, singleItem];
@@ -35,7 +50,7 @@ class ProductProvider extends Component {
             
         },
        
-        );
+        );*/
     }
 
     getItem = (id) => {
@@ -188,6 +203,43 @@ class ProductProvider extends Component {
         })
     }
 
+    // MODAL LOGIN
+    openModalLogin = () =>{
+        console.log('model Login')
+        this.setState(()=>{
+            return { modalOpenLogin:true}
+        })
+    }
+
+    closeModalLogin = () =>{
+        this.setState(() => {
+            return {modalOpenLogin : false};
+        })
+    }
+
+    // MODAL sign up
+    openModalSignUp = () =>{
+        console.log('model signe up open')
+        this.setState(()=>{
+            return { modalOpenSignUp : true};
+        })
+    }
+
+    handleCloseModalSignUp = (isLoading) =>{
+        console.log('model signe up close', isLoading)
+        if(isLoading){
+            this.setState(() => {
+                return {modalOpenSignUp : false};
+            })
+        }else{
+            this.setState(() => {
+                return {modalOpenSignUp : true};
+            })
+
+        }
+       
+    }
+
     
     render() { 
         return ( 
@@ -201,7 +253,14 @@ class ProductProvider extends Component {
                     increment: this.increment,
                     decrement: this.decrement,
                     removeItem: this.removeItem,
-                    clearCart: this.clearCart
+                    clearCart: this.clearCart,
+
+                    // To handle open close models
+                    openModalLogin: this.openModalLogin,
+                    closeModalLogin: this.closeModalLogin,
+          
+                    openModalSignUp: this.openModalSignUp,
+                    handleCloseModalSignUp: this.handleCloseModalSignUp
                 
                 }
                 }>

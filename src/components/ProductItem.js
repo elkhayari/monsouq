@@ -10,7 +10,7 @@ import { ProductConsumer } from '../context'
 class Product extends Component {
 
     render() {
-        const { id, title, img, price, inCart } = this.props.product;
+        const { _id, title, img, price, inCart } = this.props.product;
         
 
         return (
@@ -20,7 +20,7 @@ class Product extends Component {
                     {(value) => (
                         <div className='product-container'>
                             <div className="card text-black mb-3">
-                                <div className="card-header">{title} 
+                                <div className="card-header">{title}
                                 </div>
                                 <div className="product-img-container card-body">
                                     <div className='product-img' style={{ backgroundImage: `url(${img})` }} >
@@ -29,7 +29,7 @@ class Product extends Component {
                                 <div className="card-footer">
                                         <div className='row'>
                                         <div className='col-lg-12 col-sm-10 offset-md-2' >
-                                        <ButtonAddRemove key={id}  product={this.props.product} value={value} />
+                                        <ButtonAddRemove key={_id}  product={this.props.product} value={value} />
                                         </div>
                                         <div className='col-lg-12 col-sm-6 offset-md-3'>
                                             
@@ -39,7 +39,6 @@ class Product extends Component {
                                 </div>
                             </div>
                         </div>
-
                     )}
 
                 </ProductConsumer>
@@ -51,7 +50,7 @@ class Product extends Component {
 
 Product.propTypes = {
     product: PropTypes.shape({
-        id: PropTypes.number,
+        _id: PropTypes.string,
         img: PropTypes.string,
         title: PropTypes.string,
         price: PropTypes.number,
@@ -64,7 +63,7 @@ const ProductWrapper = styled.div`
       .card{
           border-color: transparent;
           transition: all 1s linear;
-          max-width: 18rem;
+          max-w_idth: 18rem;
           max-height: 20rem;
       }
 
@@ -73,16 +72,16 @@ const ProductWrapper = styled.div`
       }
 
       .product-img-container{
-          overflow:hidden;
+          overflow:h_idden;
           background-position:center;
           padding: .8rem;
           height: 12rem;
       }
 
       .product-img{
-        width:100%;
+        w_idth:100%;
         height:100%;
-        min-width:80%;
+        min-w_idth:80%;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -107,7 +106,7 @@ const ProductWrapper = styled.div`
 
       &:hover{
           .card{
-              border: 0.04rem solid rgba(0,0,0,0.2);
+              border: 0.04rem sol_id rgba(0,0,0,0.2);
               box-shadow: 5px 5px 5px 0px #8bb63c;
           }
           .card-footer{

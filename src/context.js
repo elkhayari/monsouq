@@ -28,7 +28,7 @@ class ProductProvider extends Component {
     // fetch product from data.js file
     setProducts = () => {
         let temProducts = [];
-        console.log('url', process.env.REACT_APP_BACKEND)
+        console.log('backend uri', process.env.REACT_APP_BACKEND)
         axios.get(process.env.REACT_APP_BACKEND)
              .then(response => {
                  this.setState(() => {
@@ -37,7 +37,7 @@ class ProductProvider extends Component {
                  })
              })
              .catch(error =>{
-                 console.log('fetch data error: ', error)
+                 console.log('fetch product data error: ', error)
              })
         /*
         storeProducts.forEach(item => {
